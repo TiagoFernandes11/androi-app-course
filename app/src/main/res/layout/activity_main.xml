@@ -5,19 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:background="#44e130"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:gravity="end"
+        android:textColor="#fafafa"
+        android:layout_gravity="center_horizontal|center_vertical"
         android:text="Hello World!" />
 
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="3"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
 
 </LinearLayout>
