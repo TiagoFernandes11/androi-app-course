@@ -1,4 +1,4 @@
-package udemy.alimentos;
+package udemy.alimentos.ui;
 
 import android.os.Bundle;
 
@@ -9,6 +9,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
+import business.FoodBusiness;
+import entities.FoodEntity;
+import udemy.alimentos.R;
+
 public class MainActivity extends AppCompatActivity {
 
     ViewHolder viewHolder = new ViewHolder();
@@ -18,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        List<FoodEntity> list = new FoodBusiness().getList();
         this.viewHolder.mRecyclerView = findViewById(R.id.recycler_food);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -26,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private static class ViewHolder{
+    private static class ViewHolder {
         RecyclerView mRecyclerView;
     }
 }
