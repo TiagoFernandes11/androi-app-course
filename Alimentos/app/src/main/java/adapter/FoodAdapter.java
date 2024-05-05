@@ -11,15 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import entities.FoodEntity;
+import udemy.OnListClick;
 import udemy.alimentos.R;
 import viewHolder.FoodViewHolder;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
-
+    private OnListClick mListClick;
     private List<FoodEntity> mList;
-    public FoodAdapter(List<FoodEntity> list){
+    public FoodAdapter(List<FoodEntity> list, OnListClick listener){
         this.mList = list;
+        this.mListClick = listener;
     }
+
+
+
     @NonNull
     @Override
     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,7 +37,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         FoodEntity foodEntity = this.mList.get(position);
-        holder.bind(foodEntity);
+        holder.bind(foodEntity, this.mListClick);
     }
 
     @Override

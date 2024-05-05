@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import entities.FoodEntity;
+import udemy.OnListClick;
 import udemy.alimentos.R;
 
 public class FoodViewHolder extends RecyclerView.ViewHolder {
@@ -19,8 +20,14 @@ public class FoodViewHolder extends RecyclerView.ViewHolder {
         this.mTextCalories = itemView.findViewById(R.id.text_calories);
     }
 
-    public void bind(FoodEntity food){
+    public void bind(FoodEntity food, OnListClick listener){
         this.mTextName.setText(String.valueOf(food.getName()));
         this.mTextCalories.setText(String.valueOf(food.getCalories()));
+        this.mTextName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(food.getId());
+            }
+        });
     }
 }
