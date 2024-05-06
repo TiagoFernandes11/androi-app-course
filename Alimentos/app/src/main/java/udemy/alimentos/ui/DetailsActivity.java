@@ -1,6 +1,5 @@
 package udemy.alimentos.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -19,7 +18,7 @@ import udemy.alimentos.R;
 
 public class DetailsActivity extends AppCompatActivity {
 
-    private ViewHolder mViewHolder = new ViewHolder();
+    private final ViewHolder mViewHolder = new ViewHolder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
