@@ -2,51 +2,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="#48A5CA"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="16dp">
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_centerHorizontal="true"
+    <TextView
+        android:id="@+id/text_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="button1" />
-
-    <Button
-        android:id="@+id/btn2"
+        android:text="Terça, 07 de Maio"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:textColor="#FFF"
+        android:padding="20dp"
+        android:textSize="26dp"
+        />
+
+    <View
+        android:id="@+id/horizontal_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/text_date"
+        android:background="#FFF"
+        />
+
+    <CheckBox
+        android:id="@+id/check_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="button2" />
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:text="Cortar a grama"
+        android:layout_below="@+id/horizontal_line_view"
+        android:layout_marginTop="32dp"
+        />
 
-    <Button
-        android:id="@+id/btn3"
-        android:layout_centerHorizontal="true"
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:textSize="20dp"
+        android:text="Fazer compras"
+        android:layout_below="@+id/check_1"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complete todas as tarefas"
+        android:textColor="#FFF"
         android:layout_alignParentBottom="true"
-        android:text="button3" />
-
-    <Button
-        android:id="@+id/btn4"
         android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:text="button4" />
-
-
-    <Button
-        android:id="@+id/btn5"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:text="button5" />
-
+        />
 
 </RelativeLayout>
