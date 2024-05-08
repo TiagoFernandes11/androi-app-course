@@ -4,14 +4,20 @@ public class FoodEntity {
     private int id;
     private String name;
     private int calories;
+    private int quantity;
+    private String unity;
+    private String description;
 
     public FoodEntity() {
     }
 
-    public FoodEntity(int id, String name, int calories) {
+    public FoodEntity(int id, String name, int calories, int quantity, String unity, String description) {
         this.id = id;
         this.name = name;
         this.calories = calories;
+        this.quantity = quantity;
+        this.unity = unity;
+        this.description = description;
     }
 
     public int getId() {

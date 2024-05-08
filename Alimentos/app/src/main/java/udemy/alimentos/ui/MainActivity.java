@@ -17,7 +17,7 @@ import adapter.FoodAdapter;
 import business.FoodBusiness;
 import constants.FoodConstats;
 import entities.FoodEntity;
-import udemy.OnListClick;
+import listener.OnListClick;
 import udemy.alimentos.R;
 
 public class MainActivity extends AppCompatActivity {

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import entities.FoodEntity;
-import udemy.OnListClick;
+import listener.OnListClick;
 import udemy.alimentos.R;
 import viewHolder.FoodViewHolder;
 

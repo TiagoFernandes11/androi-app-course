@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import entities.FoodEntity;
-import udemy.OnListClick;
+import listener.OnListClick;
 import udemy.alimentos.R;
 
 public class FoodViewHolder extends RecyclerView.ViewHolder {
