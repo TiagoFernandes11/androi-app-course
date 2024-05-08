@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Alimentos</string>
+    <string name="food">Alimento</string>
+    <string name="portion_size">Tamanho da porção</string>
+    <string name="text_quantity">Qnt</string>
+    <string name="unity">Un</string>
+    <string name="calories">Calorias</string>
+    <string name="ninety">90</string>
+    <string name="info">Informações</string>
+    <string name="text_info">Nenhuma informação extra para ser mostrada</string>
+    <string name="low_calorie">Baixa caloria</string>
+    <string name="medium_calorie">Média caloria</string>
+    <string name="high_calorie">Alta caloria</string>
 </resources>

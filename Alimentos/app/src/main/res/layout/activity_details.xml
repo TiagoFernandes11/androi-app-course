@@ -11,8 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:fontFamily="@font/sansita_bold"
         android:padding="16dp"
-        android:text="Alimento" />
+        android:text="@string/food" />
 
     <View
         android:id="@+id/view_name"
@@ -26,17 +27,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view_name"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/sansita_bold"
         android:padding="16dp"
-        android:text="Tamanho da porção" />
-
-    <TextView
-        android:id="@+id/text_unity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view_name"
-        android:layout_alignParentEnd="true"
-        android:padding="16dp"
-        android:text="Qnt" />
+        android:text="@string/portion_size" />
 
     <TextView
         android:id="@+id/text_quantity"
@@ -45,22 +39,32 @@
         android:layout_below="@+id/view_name"
         android:layout_toStartOf="@id/text_unity"
         android:padding="16dp"
-        android:text="Qnt" />
+        android:text="@string/text_quantity" />
+
+    <TextView
+        android:id="@+id/text_unity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_name"
+        android:layout_alignParentEnd="true"
+        android:padding="16dp"
+        android:text="@string/unity" />
 
 
     <View
         android:id="@+id/view_quantity"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@+id/text_quantity"
+        android:layout_below="@+id/text_portion"
         android:background="#818181" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/sansita_bold"
         android:layout_below="@+id/view_quantity"
         android:padding="16dp"
-        android:text="Calorias" />
+        android:text="@string/calories" />
 
 
     <TextView
@@ -70,7 +74,7 @@
         android:layout_below="@+id/view_quantity"
         android:layout_alignParentEnd="true"
         android:padding="16dp"
-        android:text="90" />
+        android:text="@string/ninety" />
 
     <View
         android:id="@+id/view_calories"
@@ -84,8 +88,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view_calories"
+        android:fontFamily="@font/sansita_bold"
         android:padding="16dp"
-        android:text="Informações" />
+        android:text="@string/info" />
 
     <TextView
         android:id="@+id/text_description"
@@ -93,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_information"
         android:paddingStart="16dp"
-        android:text="Nenhuma informação extra para ser mostrada" />
+        android:text="@string/text_info" />
 
 
 </RelativeLayout>
