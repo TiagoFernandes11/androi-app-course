@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 long now = SystemClock.elapsedRealtime();
-                long next = 1000 +(1000 - (now % 1000));
+                long next = now + (1000 - (now % 1000));
                 mHandler.postAtTime(mRunnable, next);
             }
         };
