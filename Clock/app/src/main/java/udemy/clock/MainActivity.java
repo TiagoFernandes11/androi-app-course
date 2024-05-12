@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +18,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    final Handler mHandler = new Handler();
+    Runnable mRunnable;
     private ViewHolder mViewHolder = new ViewHolder();
     private BroadcastReceiver mReciever = new BroadcastReceiver() {
         @Override
@@ -40,6 +44,21 @@ public class MainActivity extends AppCompatActivity {
         this.mViewHolder.textBattery = findViewById(R.id.text_batery);
 
         this.registerReceiver(this.mReciever, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+
+        this.startClock();
+    }
+
+    private void startClock() {
+        this.mRunnable = new Runnable() {
+            @Override
+            public void run() {
+                long now = SystemClock.elapsedRealtime();
+                long next = 1000 +(1000 - (now % 1000));
+                mHandler.postAtTime(mRunnable, next);
+            }
+        };
+        this.mRunnable.run();
+
     }
 
     private static class ViewHolder {
