@@ -16,6 +16,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     final Handler mHandler = new Handler();
@@ -49,9 +52,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startClock() {
+        Calendar calendar = Calendar.getInstance();
         this.mRunnable = new Runnable() {
             @Override
             public void run() {
+                calendar.setTimeInMillis(System.currentTimeMillis());
+
+                int hour = calendar.get(Calendar.HOUR_OF_DAY);
+                int minutes = calendar.get(Calendar.MINUTE);
+                int seconds = calendar.get(Calendar.SECOND);
+
+                mViewHolder.textHourMinute.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minutes));
+                mViewHolder.textSeconds.setText(String.format(Locale.getDefault(), "%02d", seconds));
+
                 long now = SystemClock.elapsedRealtime();
                 long next = now + (1000 - (now % 1000));
                 mHandler.postAtTime(mRunnable, next);
