@@ -21,6 +21,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Usables
     final Handler mHandler = new Handler();
     Runnable mRunnable;
     private ViewHolder mViewHolder = new ViewHolder();
