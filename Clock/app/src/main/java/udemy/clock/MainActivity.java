@@ -8,6 +8,7 @@ import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -20,7 +21,6 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    //
     final Handler mHandler = new Handler();
     Runnable mRunnable;
     private ViewHolder mViewHolder = new ViewHolder();
@@ -42,12 +42,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         this.mViewHolder.textHourMinute = findViewById(R.id.text_hour_minute);
         this.mViewHolder.textSeconds = findViewById(R.id.text_seconds);
         this.mViewHolder.textBattery = findViewById(R.id.text_batery);
 
         this.registerReceiver(this.mReciever, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_FULLSCREEN);
         this.startClock();
     }
 
