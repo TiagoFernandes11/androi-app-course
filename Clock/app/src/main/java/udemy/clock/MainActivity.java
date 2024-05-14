@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         this.registerReceiver(this.mReciever, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
         this.startClock();
     }
-
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
